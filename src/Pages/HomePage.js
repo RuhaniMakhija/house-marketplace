@@ -1,0 +1,42 @@
+import React from 'react';
+import {useNavigate} from 'react-router-dom';
+import Layout from '../components/Layout/Layout'
+import Slider from '../components/Slider';
+import "../styles/homepage.css";
+
+
+const HomePage = () => {
+  const navigate=useNavigate();
+  const img1="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80";
+  const img2="https://images.unsplash.com/photo-1626178793926-22b28830aa30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80";
+  return (
+    <Layout>
+       <div className='container mt-3'>
+       
+         {/* <Slider/> */}
+         <div className='row'>
+          <h1> Category </h1>
+           <div className='col-md-5'>
+           <div className="Imagecontainer">
+             <img src={img1} alt="rent" style={{width: '100%'}} />
+            <button className="btn"
+             onClick={()=>navigate('/category/rent')}
+             >TO RENT</button>
+          </div>
+
+           </div>
+           <div className='col-md-5'>
+           <div className="Imagecontainer">
+             <img src={img2} alt="sale" style={{width: '100%'}} />
+            <button className="btn" 
+            onClick={()=>navigate('/category/sale')}
+            >TO SALE</button>
+          </div>
+           </div>
+         </div>
+       </div>
+    </Layout>
+  )
+}
+
+export default HomePage
